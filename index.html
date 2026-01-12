@@ -113,23 +113,86 @@
           <pre class="tree">
 src/
  ├─ controller/        # 요청/응답 처리 (HTTP 계층)
+ │   ├─ attachment-controller.ts
+ │   ├─ auth-controller.ts
+ │   ├─ comment-controller.ts
+ │   ├─ member-controller.ts
+ │   ├─ project-controller.ts
+ │   ├─ subtask-controller.ts
+ │   ├─ task-controller.ts
+ │   └─ user-controller.ts
  │
  ├─ router/            # 라우팅 정의
+ │   ├─ attachment-router.ts
+ │   ├─ auth-router.ts
+ │   ├─ comment-router.ts
+ │   ├─ comment-task-router.ts
+ │   ├─ invitation-router.ts
+ │   ├─ member-router.ts
+ │   ├─ project-router.ts
+ │   ├─ subtask-router.ts
+ │   ├─ task-router.ts
+ │   └─ user-router.ts
  │
  ├─ services/           # 비즈니스 로직
+ │   ├─ attachment-service.ts
+ │   ├─ auth-sevice.ts
+ │   ├─ calendar-service.ts
+ │   ├─ comment-service.ts
+ │   ├─ member-service.ts
+ │   ├─ project-service.ts
+ │   ├─ subtask-service.ts
+ │   ├─ task-service.ts
+ │   └─ user-service.ts
  │
  ├─ repositories/       # DB 접근 계층
+ │   ├─ attachment-repository.ts
+ │   ├─ auth-repository.ts
+ │   ├─ comment-repository.ts
+ │   ├─ invitation-repository.ts
+ │   ├─ member-repository.ts
+ │   ├─ project-repository.ts
+ │   ├─ subtask-repository.ts
+ │   ├─ task-repository.ts
+ │   └─ user-repository.ts
  │
  ├─ dtos/               # 요청/응답 DTO
+ │   ├─ member-list-DTO.ts
+ │   └─ task-DTO.ts
+ │   
  │
  ├─ middleware/         # 공통 미들웨어
+ │   ├─ authenticate.ts
+ │   ├─ errorHandler.ts
+ │   ├─ handlerFn.ts
+ │   ├─ requireProjectMember.ts
+ │   ├─ upload.ts
+ │   └─ validate.ts
  │
  ├─ structs/            # 요청 데이터 구조 검증
+ │   ├─ auth-structs.ts
+ │   ├─ comment-structs.ts
+ │   ├─ member-structs.ts
+ │   ├─ project-structs.ts
+ │   └─ common-structs.ts
  │
  ├─ types/              # 타입 정의
+ │   ├─ auth.ts
+ │   ├─ comment.ts
+ │   ├─ express.d.ts
+ │   ├─ pagination.ts
+ │   ├─ Project.ts
+ │   └─ User.ts
  │
  ├─ lib/                # 에러 처리 및 사용자 정의
  │   ├─ errors/
+ │   │   ├─ BadRequestError.ts
+ │   │   ├─ ConflictError.ts
+ │   │   ├─ ForbiddenError.ts
+ │   │   ├─ NotFoundError.ts
+ │   │   ├─ UnauthorizedError.ts
+ │   │   └─ ValidationError.ts
+ │   │
  │   ├─ constants.ts
  │   ├─ google.ts
  │   ├─ mailer.ts
