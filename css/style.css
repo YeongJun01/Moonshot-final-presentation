@@ -137,3 +137,31 @@ pre {
     color: #000;
   }
 }
+/* 좌우 분할 레이아웃 */
+.split-layout {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+/* 왼쪽 이미지 */
+.split-layout .left {
+  flex: 0.9;
+  display: flex;
+  justify-content: center;
+}
+
+.split-layout .left img {
+  width: 100%;
+  max-height: 420px;
+  object-fit: contain;
+}
+
+/* 오른쪽 설명 */
+.split-layout .right {
+  flex: 1.1;
+}
+
+.split-layout pre {
+  margin: 0;
+}

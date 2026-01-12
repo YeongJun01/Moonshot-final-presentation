@@ -10,6 +10,7 @@
     <!-- 1. 표지 -->
     <section class="slide title">
       <h1>Moonshot</h1>
+      <p class="subtitle">part3 team5</p>
       <p class="subtitle">김지수 · 나영준 · 박건용 · 이광수 · 이상휘</p>
     </section>
 
@@ -106,11 +107,131 @@
     <!-- 7. 프로젝트 구조 -->
     <section class="slide">
       <h2>프로젝트 구조</h2>
-      <pre>
+
+      <div class="split-layout">
+        <div class="left">
+          <pre>
+src/
+ ├─ controller/        # 요청/응답 처리 (HTTP 계층)
+ │   ├─ attachment-controller.ts
+ │   ├─ auth-controller.ts
+ │   ├─ comment-controller.ts
+ │   ├─ member-controller.ts
+ │   ├─ project-controller.ts
+ │   ├─ subtask-controller.ts
+ │   ├─ task-controller.ts
+ │   └─ user-controller.ts
+ │
+ ├─ router/            # 라우팅 정의
+ │   ├─ attachment-router.ts
+ │   ├─ auth-router.ts
+ │   ├─ comment-router.ts
+ │   ├─ comment-task-router.ts
+ │   ├─ invitation-router.ts
+ │   ├─ member-router.ts
+ │   ├─ project-router.ts
+ │   ├─ subtask-router.ts
+ │   ├─ task-router.ts
+ │   └─ user-router.ts
+ │
+ ├─ services/           # 비즈니스 로직
+ │   ├─ attachment-service.ts
+ │   ├─ auth-sevice.ts
+ │   ├─ calendar-service.ts
+ │   ├─ comment-service.ts
+ │   ├─ member-service.ts
+ │   ├─ project-service.ts
+ │   ├─ subtask-service.ts
+ │   ├─ task-service.ts
+ │   └─ user-service.ts
+ │
+ ├─ repositories/       # DB 접근 계층
+ │   ├─ attachment-repository.ts
+ │   ├─ auth-repository.ts
+ │   ├─ comment-repository.ts
+ │   ├─ invitation-repository.ts
+ │   ├─ member-repository.ts
+ │   ├─ project-repository.ts
+ │   ├─ subtask-repository.ts
+ │   ├─ task-repository.ts
+ │   └─ user-repository.ts
+ │
+ ├─ dtos/               # 요청/응답 DTO
+ │   ├─ member-list-DTO.ts
+ │   └─ task-DTO.ts
+ │   
+ │
+ ├─ middleware/         # 공통 미들웨어
+ │   ├─ authenticate.ts
+ │   ├─ errorHandler.ts
+ │   ├─ handlerFn.ts
+ │   ├─ requireProjectMember.ts
+ │   ├─ upload.ts
+ │   └─ validate.ts
+ │
+ ├─ structs/            # 요청 데이터 구조 검증
+ │   ├─ auth-structs.ts
+ │   ├─ comment-structs.ts
+ │   ├─ member-structs.ts
+ │   ├─ project-structs.ts
+ │   └─ common-structs.ts
+ │
+ ├─ types/              # 타입 정의
+ │   ├─ auth.ts
+ │   ├─ comment.ts
+ │   ├─ express.d.ts
+ │   ├─ pagination.ts
+ │   ├─ Project.ts
+ │   └─ User.ts
+ │
+ ├─ lib/                # 에러 처리 및 사용자 정의
+ │   ├─ errors/
+ │   │   ├─ BadRequestError.ts
+ │   │   ├─ ConflictError.ts
+ │   │   ├─ ForbiddenError.ts
+ │   │   ├─ NotFoundError.ts
+ │   │   ├─ UnauthorizedError.ts
+ │   │   └─ ValidationError.ts
+ │   │
+ │   ├─ constants.ts
+ │   ├─ google.ts
+ │   ├─ mailer.ts
+ │   ├─ prisma.ts
+ │   ├─ seed.ts
+ │   ├─ token.ts
+ │   └─ url.ts
+ │
+ ├─ .env
+ ├─ .prettierrc
+ ├─ package.json
+ ├─ package-lock.json
+ ├─ tsconfig.json
+ └─ app.ts              # express app 설정, 서버 실행
+
+    </pre
+          >
+        </div>
+
+        <div class="right">
+          <pre>
 Controller → Service → Repository
 요청 / 비즈니스 로직 / DB 접근 계층 분리
-    </pre
-      >
+
+- Controller
+  · HTTP 요청/응답 처리
+  · 입력값 검증 및 예외 처리
+
+- Service
+  · 비즈니스 로직 담당
+  · 트랜잭션 관리
+
+- Repository
+  · DB 접근 전담
+  · Prisma 기반 데이터 처리
+      </pre
+          >
+        </div>
+      </div>
     </section>
 
     <!-- 8. 배포 다이어그램 -->
