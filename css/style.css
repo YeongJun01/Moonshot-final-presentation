@@ -164,3 +164,42 @@ pre.tree {
 .split-layout pre {
   margin: 0;
 }
+.api-accordion {
+  margin-top: 20px;
+}
+
+.api-item {
+  margin-bottom: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #1e1e1e;
+}
+
+.api-header {
+  width: 100%;
+  padding: 14px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: left;
+  background: #2b2b2b;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.api-header:hover {
+  background: #3a3a3a;
+}
+
+.api-body {
+  display: none;
+  padding: 16px 20px;
+  background: #111;
+}
+
+.api-body pre {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #dcdcdc;
+}
