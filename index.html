@@ -1,41 +1,129 @@
 <!DOCTYPE html>
 <html lang="ko">
-<header>
-  <h1>Moonshot</h1>
-  <title>5team-Moonshot</title>
-  <p class="subtitle">김지수, 나영준, 박건용, 이광수, 이상휘</p>
-   <link rel="stylesheet" href="css/style.css" />
-</header>
+  <head>
+    <meta charset="UTF-8" />
+    <title>5team-Moonshot</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
 
-<nav>
-  <a href="index.html">개요</a>
-  <a href="team.html">팀·협업</a>
-  <a href="structure.html">구조·설계</a>
-  <a href="process.html">수행 절차</a>
-  <a href="trouble.html">트러블 슈팅</a>
-  <a href="result.html">결과·회고</a>
-</nav>
+  <body>
+    <!-- 1. 표지 -->
+    <section class="slide title">
+      <h1>Moonshot</h1>
+      <p class="subtitle">김지수 · 나영준 · 박건용 · 이광수 · 이상휘</p>
+    </section>
 
-    <main>
-      <section>
-        <h2>프로젝트 내용</h2>
-        <p>
-          본 프로젝트는 노션과 유사한 프로젝트 일정 관리 서비스를 구현하는 것을 목표로 하며,
-          요규사항 분석을 통해 프로젝트 및 할 일 관리 기능을 설계하고,
-          구글 로그인과 캘린더 연동을 포함한 핵심 기능을 구현했습니다.
-        </p>
-      </section>
+    <!-- 2. 프로젝트 개요 -->
+    <section class="slide">
+      <h2>프로젝트 개요</h2>
+      <p>
+        본 프로젝트는 노션과 유사한 프로젝트 일정 관리 서비스를 구현하는 것을
+        목표로 하며, 요구사항 분석을 통해 프로젝트 및 할 일 관리 기능을
+        설계하고, 구글 로그인과 캘린더 연동을 포함한 핵심 기능을 구현했습니다.
+      </p>
+    </section>
 
-      <section>
-        <h2>개발 환경 및 사용 스택</h2>
-        <ul>
-          <li>Backend: Node.js, Express</li>
-          <li>Database: PostgreSQL</li>
-          <li>Deployment: Render(서버), Netlify(발표자료)</li>
-          <li>API 문서화: Swagger</li>
-          <li>협업 도구: Discord, Github</li>
-        </ul>
-      </section>
-    </main>
+    <!-- 3. 개발 환경 및 기술 스택 -->
+    <section class="slide">
+      <h2>개발 환경 및 사용 스택</h2>
+      <ul>
+        <li>Backend: Node.js, Express</li>
+        <li>Database: PostgreSQL</li>
+        <li>Deployment: Render, Netlify</li>
+        <li>API 문서화: Swagger</li>
+        <li>협업 도구: GitHub, Notion, Discord</li>
+      </ul>
+    </section>
+
+    <!-- 4. 팀 구성 및 R&R -->
+    <section class="slide">
+      <h2>팀 구성 및 역할</h2>
+      <ul>
+        <li>김지수 – 댓글</li>
+        <li>나영준 – 프로젝트 설계, 인증, 파일 업로드, 할 일</li>
+        <li>박건용 – 프로젝트, 멤버, 댓글, 태그, 하위 할 일, 문서화</li>
+        <li>이광수 – 하위 할 일</li>
+        <li>이상휘 – 할 일</li>
+      </ul>
+    </section>
+
+    <!-- 5. 협업 방식 -->
+    <section class="slide">
+      <h2>협업 방식</h2>
+      <ul>
+        <li>Git Flow 기반 브랜치 전략</li>
+        <li>주 2회 회의 진행</li>
+        <li>이슈 단위 개발 및 코드 리뷰</li>
+      </ul>
+    </section>
+
+    <!-- 6. 프로젝트 일정 -->
+    <section class="slide">
+      <h2>프로젝트 수행 일정</h2>
+      <table>
+        <tr>
+          <th>구분</th>
+          <th>기간</th>
+          <th>내용</th>
+        </tr>
+        <tr>
+          <td>기획</td>
+          <td>12/19 ~ 12/23</td>
+          <td>요구사항 정의</td>
+        </tr>
+        <tr>
+          <td>1차 스프린트</td>
+          <td>12/24 ~ 01/06</td>
+          <td>핵심 기능 구현</td>
+        </tr>
+        <tr>
+          <td>2차 스프린트</td>
+          <td>01/06 ~ 01/14</td>
+          <td>추가 개발 및 테스트</td>
+        </tr>
+      </table>
+    </section>
+
+    <!-- 7. 프로젝트 구조 -->
+    <section class="slide">
+      <h2>프로젝트 구조</h2>
+      <pre>
+Controller → Service → Repository
+요청 / 비즈니스 로직 / DB 접근 계층 분리
+    </pre
+      >
+    </section>
+
+    <!-- 8. 배포 다이어그램 -->
+    <section class="slide">
+      <h2>배포 다이어그램</h2>
+      <img src="images/deploy-diagram.png" />
+    </section>
+
+    <!-- 9. ERD -->
+    <section class="slide">
+      <h2>ERD</h2>
+      <img src="images/Moonshot-erd.png" />
+    </section>
+
+    <!-- 10. 트러블 슈팅 -->
+    <section class="slide">
+      <h2>트러블 슈팅</h2>
+      <ul>
+        <li>문제: OAuth 인증 후 토큰 전달 오류</li>
+        <li>원인: 쿠키 설정 및 CORS 정책</li>
+        <li>해결: HTTP Only 쿠키 적용</li>
+      </ul>
+    </section>
+
+    <!-- 11. 회고 -->
+    <section class="slide">
+      <h2>회고</h2>
+      <ul>
+        <li>잘한 점: 역할 분담과 구조 설계</li>
+        <li>아쉬운 점: 초기 일정 관리</li>
+        <li>느낀 점: 사전 설계의 중요성</li>
+      </ul>
+    </section>
   </body>
 </html>
