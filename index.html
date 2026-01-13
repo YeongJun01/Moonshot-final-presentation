@@ -54,7 +54,7 @@
       <ul>
         <li>Git Flow 기반 브랜치 전략</li>
         <li>주 2회 회의 진행</li>
-        <li>이슈 단위 개발 및 코드 리뷰</li>
+        <li>api 단위 개발</li>
       </ul>
     </section>
 
@@ -242,9 +242,11 @@ Controller → Service → Repository
           <button class="api-header">🔐 인증 API</button>
           <div class="api-body">
             <pre>
+POST /auth/register
 POST /auth/login
-POST /auth/logout
 POST /auth/refresh
+GET  /auth/google
+GET  /auth/google/callback
         </pre
             >
           </div>
@@ -256,7 +258,8 @@ POST /auth/refresh
             <pre>
 GET    /users/me
 PATCH  /users/me
-DELETE /users/me
+GET    /users/me/projects
+GET    /users/me/tasks
         </pre
             >
           </div>
@@ -266,9 +269,8 @@ DELETE /users/me
           <button class="api-header">📁 프로젝트 API</button>
           <div class="api-body">
             <pre>
-GET    /projects
+GET    /projects/:projectId
 POST   /projects
-GET    /projects/:id
 PATCH  /projects/:id
 DELETE /projects/:id
         </pre
@@ -280,10 +282,10 @@ DELETE /projects/:id
           <button class="api-header">✅ 할 일 API</button>
           <div class="api-body">
             <pre>
-GET    /todos
-POST   /todos
-PATCH  /todos/:id
-DELETE /todos/:id
+POST   /projects/:projectId/tasks
+GET    /projects/:projectId/tasks
+GET    /tasks/:taskId
+DELETE /tasks/:taskId
         </pre
             >
           </div>
@@ -298,8 +300,11 @@ DELETE /todos/:id
           <button class="api-header">💬 댓글 API</button>
           <div class="api-body">
             <pre>
-POST   /comments
-DELETE /comments/:id
+POST   /tasks/:taskId/comments
+GET    /tasks/:taskId/comments
+GET    /comments/:commentId
+PATCH  /comments/:comentId
+DELETE /comments/:commentId
         </pre
             >
           </div>
@@ -309,8 +314,11 @@ DELETE /comments/:id
           <button class="api-header">👥 멤버 API</button>
           <div class="api-body">
             <pre>
-POST   /projects/:id/members
-DELETE /projects/:id/members/:userId
+POST   /projects/:projectId/users
+DELETE /projects/:id/users/:userId
+POST   /projects/:projectId/invitation
+POST   /invitations/:invitationId/accept
+DELETE /invitations/:invitationId
         </pre
             >
           </div>
@@ -320,7 +328,7 @@ DELETE /projects/:id/members/:userId
           <button class="api-header">📎 파일 업로드 API</button>
           <div class="api-body">
             <pre>
-POST /files/upload
+POST /files
         </pre
             >
           </div>
@@ -330,7 +338,11 @@ POST /files/upload
           <button class="api-header">🧩 하위 할 일 API</button>
           <div class="api-body">
             <pre>
-POST /todos/:id/subtasks
+POST   /tasks/:taskId/subtask
+GET    /tasks/:taskId/subtasks
+GET    /subtasks/:subtaskId
+PATCH  /subtasks/:subtaskId
+DELETE /subtasks/:subtaskId
         </pre
             >
           </div>
@@ -354,9 +366,16 @@ POST /todos/:id/subtasks
     <section class="slide">
       <h2>트러블 슈팅</h2>
       <ul>
-        <li>문제: OAuth 인증 후 토큰 전달 오류</li>
-        <li>원인: 쿠키 설정 및 CORS 정책</li>
-        <li>해결: HTTP Only 쿠키 적용</li>
+        <li>문제: OAuth 인증 후 토큰 전달 오류 - undefined</li>
+        <li>원인: 프론트 access-token, 백엔드 accessToken -> 불일치</li>
+        <li>해결: 프론트인 access-token으로 통일</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>시연</h2>
+      <ul>
+        <li><a href="https://moonshot-frontend.onrender.com">Moonshot</a></li>
       </ul>
     </section>
 
@@ -364,9 +383,9 @@ POST /todos/:id/subtasks
     <section class="slide">
       <h2>회고</h2>
       <ul>
-        <li>잘한 점: 역할 분담과 구조 설계</li>
-        <li>아쉬운 점: 초기 일정 관리</li>
-        <li>느낀 점: 사전 설계의 중요성</li>
+        <li>잘한 점</li>
+        <li>아쉬운 점</li>
+        <li>느낀 점</li>
       </ul>
     </section>
     <script>
