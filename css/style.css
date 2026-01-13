@@ -115,28 +115,15 @@ pre {
 /* PDF 출력용 */
 @media print {
   body {
-    background: #fff;
-    color: #000;
+    margin: 0;
   }
 
   .slide {
-    background: #fff;
+    page-break-after: always;
     box-shadow: none;
   }
-
-  h2::after {
-    background: #000;
-  }
-
-  th {
-    background: #e5e7eb;
-  }
-
-  pre {
-    background: #f3f4f6;
-    color: #000;
-  }
 }
+
 /* 좌우 분할 레이아웃 */
 .split-layout {
   display: flex;
