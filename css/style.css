@@ -1,8 +1,8 @@
 /* 전체 기본 설정 */
 body {
   margin: 0;
-  background: #0f172a; /* 딥 네이비 */
-  color: #e5e7eb;
+  background: #f8fafc; /* 밝은 배경 */
+  color: #111827; /* 기본 텍스트 검정 */
   font-family: "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
 }
 
@@ -17,9 +17,9 @@ body {
   flex-direction: column;
   justify-content: center;
 
-  background: linear-gradient(135deg, #0f172a 0%, #020617 100%);
-
-  page-break-after: always;
+  background: #ffffff; /* 흰 배경 */
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
 }
 
 /* 제목 슬라이드 */
@@ -32,11 +32,12 @@ body {
   font-size: 64px;
   font-weight: 800;
   margin-bottom: 20px;
+  color: #84cc16; /* 연두 포인트 */
 }
 
 .subtitle {
   font-size: 22px;
-  opacity: 0.8;
+  color: #4b5563;
 }
 
 /* 섹션 제목 */
@@ -44,15 +45,17 @@ h2 {
   font-size: 40px;
   margin-bottom: 30px;
   position: relative;
+  color: #84cc16; /* 연두색 */
 }
 
 h2::after {
   content: "";
   width: 80px;
   height: 4px;
-  background: #38bdf8; /* 포인트 컬러 */
+  background: #84cc16;
   display: block;
   margin-top: 12px;
+  border-radius: 2px;
 }
 
 /* 본문 텍스트 */
@@ -60,6 +63,7 @@ p,
 li {
   font-size: 22px;
   line-height: 1.6;
+  color: #111827;
 }
 
 /* 리스트 */
@@ -82,13 +86,13 @@ table {
 
 th,
 td {
-  border: 1px solid #334155;
+  border: 1px solid #e5e7eb;
   padding: 14px;
   text-align: left;
 }
 
 th {
-  background: #1e293b;
+  background: #f1f5f9;
   font-weight: 600;
 }
 
@@ -98,18 +102,89 @@ img {
   max-height: 420px;
   margin-top: 20px;
   border-radius: 12px;
-  background: #fff;
+  border: 1px solid #e5e7eb;
 }
 
 /* 코드 / 구조 표시 */
 pre {
-  background: #020617;
+  background: #f1f5f9;
   padding: 24px;
   border-radius: 12px;
   font-size: 18px;
   line-height: 1.5;
-  color: #e5e7eb;
+  color: #111827;
   overflow-x: auto;
+  border: 1px solid #e5e7eb;
+}
+
+/* 좌우 분할 레이아웃 */
+.split-layout {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+pre.tree {
+  font-size: 14px;
+  line-height: 1.4;
+  padding: 24px;
+  max-height: 480px;
+  overflow-y: auto;
+}
+
+/* 왼쪽 영역 */
+.split-layout .left {
+  flex: 1.2;
+}
+
+/* 오른쪽 설명 */
+.split-layout .right {
+  flex: 1;
+}
+
+.split-layout pre {
+  margin: 0;
+}
+
+/* API 아코디언 */
+.api-accordion {
+  margin-top: 20px;
+}
+
+.api-item {
+  margin-bottom: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+}
+
+.api-header {
+  width: 100%;
+  padding: 14px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: left;
+  background: #84cc16; /* 연두 */
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.api-header:hover {
+  background: #65a30d;
+}
+
+.api-body {
+  display: none;
+  padding: 16px 20px;
+  background: #f9fafb;
+}
+
+.api-body pre {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #111827;
 }
 
 /* PDF 출력용 */
@@ -121,72 +196,6 @@ pre {
   .slide {
     page-break-after: always;
     box-shadow: none;
+    border: none;
   }
-}
-
-/* 좌우 분할 레이아웃 */
-.split-layout {
-  display: flex;
-  gap: 40px;
-  align-items: center;
-}
-
-pre.tree {
-  font-size: 14px; /* ← 핵심 */
-  line-height: 1.4;
-  padding: 24px;
-  max-height: 480px; /* 슬라이드 넘침 방지 */
-  overflow-y: auto;
-}
-
-/* 왼쪽 영역 크기 조절 */
-.split-layout .left {
-  flex: 1.2;
-}
-
-/* 오른쪽 설명 영역 */
-.split-layout .right {
-  flex: 1;
-}
-.split-layout pre {
-  margin: 0;
-}
-.api-accordion {
-  margin-top: 20px;
-}
-
-.api-item {
-  margin-bottom: 10px;
-  border-radius: 10px;
-  overflow: hidden;
-  background: #1e1e1e;
-}
-
-.api-header {
-  width: 100%;
-  padding: 14px 20px;
-  font-size: 18px;
-  font-weight: bold;
-  text-align: left;
-  background: #2b2b2b;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-}
-
-.api-header:hover {
-  background: #3a3a3a;
-}
-
-.api-body {
-  display: none;
-  padding: 16px 20px;
-  background: #111;
-}
-
-.api-body pre {
-  margin: 0;
-  font-size: 14px;
-  line-height: 1.5;
-  color: #dcdcdc;
 }

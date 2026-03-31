@@ -1,64 +1,87 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <title>5team-Moonshot</title>
+    <title>welive</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
 
   <body>
     <!-- 1. 표지 -->
     <section class="slide title">
-      <h1>Moonshot</h1>
-      <p class="subtitle">part3 team5</p>
-      <p class="subtitle">김지수 · 나영준 · 박건용 · 이광수 · 이상휘</p>
+      <h1>welive</h1>
+      <p class="subtitle">part4 team4</p>
+      <p class="subtitle">김지선 · 나영준 · 이상운</p>
     </section>
 
     <!-- 2. 프로젝트 개요 -->
     <section class="slide">
       <h2>프로젝트 개요</h2>
       <p>
-        본 프로젝트는 노션과 유사한 프로젝트 일정 관리 서비스를 구현하는 것을
-        목표로 하며, 요구사항 분석을 통해 프로젝트 및 할 일 관리 기능을
-        설계하고, 구글 로그인과 캘린더 연동을 포함한 핵심 기능을 구현했습니다.
+        본 프로젝트는 주민들과 아파트 관리 단체를 위한 상호 관리 플랫폼으로
+        슈퍼어드민, 어드민, 유저의 3가지 유형으로 구분되어 사용할 수 있습니다.
       </p>
     </section>
 
-    <!-- 3. 개발 환경 및 기술 스택 -->
+    <!-- 3. 핵심 기능 -->
+    <section class="slide">
+      <h2>핵심 기능</h2>
+      <ul>
+        <li>공지사항 관리 (관리자 → 입주민 전달)</li>
+        <li>민원 시스템 (입주민 → 관리자 요청)</li>
+        <li>투표 기능 (의사결정 참여)</li>
+        <li>실시간 알림 (Socket / SSE)</li>
+        <li>입주민 명부 관리 (CSV 업로드)</li>
+      </ul>
+    </section>
+
+    <!-- 4. 개발 환경 및 기술 스택 -->
     <section class="slide">
       <h2>개발 환경 및 사용 스택</h2>
       <ul>
         <li>Backend: Node.js, Express</li>
         <li>Database: PostgreSQL</li>
-        <li>Deployment: Render</li>
+        <li>Deployment: AWS EC2, Nginx, PM2</li>
+        <li>CI/CD: GitHub Actions</li>
         <li>API 문서화: Swagger</li>
         <li>협업 도구: GitHub, Notion, Discord</li>
       </ul>
     </section>
 
-    <!-- 4. 팀 구성 및 R&R -->
+    <!-- 5. 팀 구성 및 R&R -->
     <section class="slide">
       <h2>팀 구성 및 역할</h2>
       <ul>
-        <li>김지수 – 댓글</li>
-        <li>나영준 – 프로젝트 설계, 인증, 파일 업로드, 할 일</li>
-        <li>박건용 – 프로젝트, 멤버, 댓글, 태그, 하위 할 일, 문서화</li>
-        <li>이광수 – 하위 할 일</li>
-        <li>이상휘 – 할 일</li>
+        <li>김지선 – Complaint, Notice, Poll, Pollvote, Event</li>
+        <li>나영준 – Apartment, ResidentList, Comment</li>
+        <li>이상운 – Auth, User, Notification</li>
       </ul>
     </section>
 
-    <!-- 5. 협업 방식 -->
+    <!-- 6. 협업 방식 -->
     <section class="slide">
       <h2>협업 방식</h2>
       <ul>
         <li>Git Flow 기반 브랜치 전략</li>
-        <li>주 2회 회의 진행</li>
+        <li>Daily Scrum</li>
         <li>api 단위 개발</li>
       </ul>
     </section>
+    <!-- 7. 커밋 컨벤션 -->
+    <section class="slide">
+      <h2>커밋 컨벤션</h2>
+      <ul>
+        <li>✨ feat : 새로운 기능 추가</li>
+        <li>🐛 fix : 버그 수정</li>
+        <li>📝 docs : 문서 수정</li>
+        <li>🛠️ refactor : 리팩토링</li>
+        <li>✅ test : 테스트 추가/수정</li>
+        <li>🔥 remove : 코드/파일 삭제</li>
+        <li>♻️ chore(update) : 유지보수 작업(빌드/설정/패키지 등)</li>
+      </ul>
+    </section>
 
-    <!-- 6. 프로젝트 일정 -->
+    <!-- 8. 프로젝트 일정 -->
     <section class="slide">
       <h2>프로젝트 수행 일정</h2>
       <table>
@@ -72,28 +95,35 @@
         <tbody>
           <tr>
             <td>기획 및 요구사항 정리</td>
-            <td>12/19 ~ 12/23</td>
-            <td>프로젝트 방향성 논의, 핵심 기능 정의 및 기능 리스트 작성</td>
+            <td>02/13 ~ 02/20</td>
+            <td>
+              프로젝트 방향성 논의, 핵심 기능 정의 및 기능 리스트, ERD 작성
+            </td>
           </tr>
           <tr>
             <td>1차 개발 스프린트</td>
-            <td>12/24 ~ 01/06</td>
+            <td>02/23 ~ 03/05</td>
             <td>인증, 프로젝트, 멤버, 할 일, 하위 할 일 등 주요 기능 구현</td>
           </tr>
           <tr>
             <td>중간 발표</td>
-            <td>12/30</td>
+            <td>03/06</td>
             <td>ERD 설계, R&amp;R 분해 현황 및 개발 진행 상황 공유</td>
           </tr>
           <tr>
             <td>중간 점검 &amp; 회고</td>
-            <td>01/06</td>
+            <td>03/06</td>
             <td>기능 시연, 피드백 수렴 및 2차 개발 분배</td>
           </tr>
           <tr>
             <td>2차 개발 스프린트</td>
-            <td>01/06 ~ 01/14</td>
+            <td>03/07 ~ 03/27</td>
             <td>추가 기능 개발, 테스트 및 버그 수정</td>
+          </tr>
+          <tr>
+            <td>배포 및 각종 문서 준비</td>
+            <td>03/30 ~ 03/31</td>
+            <td>aws 배포 및 발표 자료 준비</td>
           </tr>
           <tr>
             <td>최종 발표 &amp; 회고</td>
@@ -104,109 +134,51 @@
       </table>
     </section>
 
-    <!-- 7. 프로젝트 구조 -->
+    <!-- 9. 프로젝트 구조 -->
     <section class="slide">
       <h2>프로젝트 구조</h2>
 
       <div class="split-layout">
         <div class="left">
           <pre class="tree">
-src/
- ├─ controller/        # 요청/응답 처리 (HTTP 계층)
- │   ├─ attachment-controller.ts
- │   ├─ auth-controller.ts
- │   ├─ comment-controller.ts
- │   ├─ member-controller.ts
- │   ├─ project-controller.ts
- │   ├─ subtask-controller.ts
- │   ├─ task-controller.ts
- │   └─ user-controller.ts
- │
- ├─ router/            # 라우팅 정의
- │   ├─ attachment-router.ts
- │   ├─ auth-router.ts
- │   ├─ comment-router.ts
- │   ├─ comment-task-router.ts
- │   ├─ invitation-router.ts
- │   ├─ member-router.ts
- │   ├─ project-router.ts
- │   ├─ subtask-router.ts
- │   ├─ task-router.ts
- │   └─ user-router.ts
- │
- ├─ services/           # 비즈니스 로직
- │   ├─ attachment-service.ts
- │   ├─ auth-sevice.ts
- │   ├─ calendar-service.ts
- │   ├─ comment-service.ts
- │   ├─ member-service.ts
- │   ├─ project-service.ts
- │   ├─ subtask-service.ts
- │   ├─ task-service.ts
- │   └─ user-service.ts
- │
- ├─ repositories/       # DB 접근 계층
- │   ├─ attachment-repository.ts
- │   ├─ auth-repository.ts
- │   ├─ comment-repository.ts
- │   ├─ invitation-repository.ts
- │   ├─ member-repository.ts
- │   ├─ project-repository.ts
- │   ├─ subtask-repository.ts
- │   ├─ task-repository.ts
- │   └─ user-repository.ts
- │
- ├─ dtos/               # 요청/응답 DTO
- │   ├─ member-list-DTO.ts
- │   └─ task-DTO.ts
- │   
- │
- ├─ middleware/         # 공통 미들웨어
- │   ├─ authenticate.ts
- │   ├─ errorHandler.ts
- │   ├─ handlerFn.ts
- │   ├─ requireProjectMember.ts
- │   ├─ upload.ts
- │   └─ validate.ts
- │
- ├─ structs/            # 요청 데이터 구조 검증
- │   ├─ auth-structs.ts
- │   ├─ comment-structs.ts
- │   ├─ member-structs.ts
- │   ├─ project-structs.ts
- │   └─ common-structs.ts
- │
- ├─ types/              # 타입 정의
- │   ├─ auth.ts
- │   ├─ comment.ts
- │   ├─ express.d.ts
- │   ├─ pagination.ts
- │   ├─ Project.ts
- │   └─ User.ts
- │
- ├─ lib/                # 에러 처리 및 사용자 정의
- │   ├─ errors/
- │   │   ├─ BadRequestError.ts
- │   │   ├─ ConflictError.ts
- │   │   ├─ ForbiddenError.ts
- │   │   ├─ NotFoundError.ts
- │   │   ├─ UnauthorizedError.ts
- │   │   └─ ValidationError.ts
- │   │
- │   ├─ constants.ts
- │   ├─ google.ts
- │   ├─ mailer.ts
- │   ├─ prisma.ts
- │   ├─ seed.ts
- │   ├─ token.ts
- │   └─ url.ts
- │
- ├─ .env
- ├─ .prettierrc
- ├─ package.json
- ├─ package-lock.json
- ├─ tsconfig.json
- └─ app.ts              # express app 설정, 서버 실행
+.
+├── prisma/
+│   ├── migrations/            # 데이터베이스 마이그레이션
+│   ├── schema.prisma          # 데이터 모델 정의
+│   └── seed.mjs               # 초기 데이터 시드 (@faker-js/faker)
+├── src/
+│   ├── main.ts                # 서버 실행 진입점 (Socket.io, cron 초기화)
+│   ├── app.ts                 # Express 앱 설정 (미들웨어, 라우터 등록)
+│   ├── modules/               # 기능별 독립 모듈
+│   │   ├── apartment/         # 아파트 정보 관리
+│   │   ├── auth/              # 인증 + 회원가입 + 관리자/입주민 관리
+│   │   ├── comment/           # 댓글 관리
+│   │   ├── complaint/         # 민원 관리
+│   │   ├── event/             # 이벤트 관리
+│   │   ├── notice/            # 공지사항 관리
+│   │   ├── notification/      # 알림 (Socket.io + SSE)
+│   │   ├── poll/              # 투표 게시판
+│   │   ├── residentList/      # 입주민 명부 (CSV 업로드/다운로드)
+│   │   ├── user/              # 사용자 프로필 관리
+│   │   └── vote/              # 투표 참여
+│   ├── lib/
+│   │   ├── prisma.ts          # Prisma Client 싱글톤
+│   │   ├── constants.ts       # 환경변수 및 전역 상수
+│   │   ├── socket.ts          # Socket.io 싱글톤 (initSocket, getIO)
+│   │   └── errors/            # 커스텀 HTTP 에러 클래스
+│   ├── middlewares/
+│   │   ├── asyncHandler.ts    # 비동기 에러 래퍼
+│   │   ├── authMiddleware.ts  # JWT 인증 미들웨어
+│   │   ├── errorHandler.ts    # 중앙 에러 핸들러 & 404 처리
+│   │   └── upload.ts          # Multer 파일 업로드 설정
+│   ├── structs/
+│   │   └── common.validation.ts  # Superstruct 공통 검증기
+│   └── types/
+│       └── express.d.ts       # Express Request 타입 확장 (req.user)
+├── jest.config.ts
+├── tsconfig.json
+├── .prettierrc
+└── package.json
 
     </pre
           >
@@ -234,158 +206,37 @@ Controller → Service → Repository
       </div>
     </section>
 
-    <section class="slide">
-      <h2>API 명세</h2>
-
-      <div class="api-accordion">
-        <div class="api-item">
-          <button class="api-header">🔐 인증 API</button>
-          <div class="api-body">
-            <pre>
-POST /auth/register
-POST /auth/login
-POST /auth/refresh
-GET  /auth/google
-GET  /auth/google/callback
-        </pre
-            >
-          </div>
-        </div>
-
-        <div class="api-item">
-          <button class="api-header">👤 유저 API</button>
-          <div class="api-body">
-            <pre>
-GET    /users/me
-PATCH  /users/me
-GET    /users/me/projects
-GET    /users/me/tasks
-        </pre
-            >
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="slide">
-      <h2>API 명세</h2>
-
-      <div class="api-accordion">
-        <div class="api-item">
-          <button class="api-header">📁 프로젝트 API</button>
-          <div class="api-body">
-            <pre>
-GET    /projects/:projectId
-POST   /projects
-PATCH  /projects/:id
-DELETE /projects/:id
-        </pre
-            >
-          </div>
-        </div>
-
-        <div class="api-item">
-          <button class="api-header">✅ 할 일 API</button>
-          <div class="api-body">
-            <pre>
-POST   /projects/:projectId/tasks
-GET    /projects/:projectId/tasks
-GET    /tasks/:taskId
-DELETE /tasks/:taskId
-        </pre
-            >
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="slide">
-      <h2>API 명세</h2>
-
-      <div class="api-accordion">
-        <div class="api-item">
-          <button class="api-header">💬 댓글 API</button>
-          <div class="api-body">
-            <pre>
-POST   /tasks/:taskId/comments
-GET    /tasks/:taskId/comments
-GET    /comments/:commentId
-PATCH  /comments/:comentId
-DELETE /comments/:commentId
-        </pre
-            >
-          </div>
-        </div>
-
-        <div class="api-item">
-          <button class="api-header">👥 멤버 API</button>
-          <div class="api-body">
-            <pre>
-POST   /projects/:projectId/users
-DELETE /projects/:id/users/:userId
-POST   /projects/:projectId/invitation
-POST   /invitations/:invitationId/accept
-DELETE /invitations/:invitationId
-        </pre
-            >
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="slide">
-      <h2>API 명세</h2>
-
-      <div class="api-accordion">
-        <div class="api-item">
-          <button class="api-header">📎 파일 업로드 API</button>
-          <div class="api-body">
-            <pre>
-POST /files
-        </pre
-            >
-          </div>
-        </div>
-
-        <div class="api-item">
-          <button class="api-header">🧩 하위 할 일 API</button>
-          <div class="api-body">
-            <pre>
-POST   /tasks/:taskId/subtask
-GET    /tasks/:taskId/subtasks
-GET    /subtasks/:subtaskId
-PATCH  /subtasks/:subtaskId
-DELETE /subtasks/:subtaskId
-        </pre
-            >
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 8. 배포 다이어그램 -->
+    <!-- 10. 배포 다이어그램 -->
     <section class="slide">
       <h2>배포 다이어그램</h2>
-      <img src="images/deploy_d.png" />
+      <img src="images/welive-deploy.png" />
     </section>
 
-    <!-- 9. ERD -->
+    <!-- 11. ERD -->
     <section class="slide">
       <h2>ERD</h2>
-      <img src="images/Moonshot-erd.png" />
+      <img src="images/welive-erd.png" />
     </section>
 
-    <!-- 10. 트러블 슈팅 -->
+    <!-- 12. 트러블 슈팅 -->
     <section class="slide">
       <h2>트러블 슈팅</h2>
       <ul>
-        <li>문제: OAuth 인증 후 토큰 전달 오류 - undefined</li>
-        <li>원인: 프론트 access-token, 백엔드 accessToken -> 불일치</li>
-        <li>해결: 프론트인 access-token으로 통일</li>
+        <li>boardId 및 board의 활용</li>
+        <li>사용자로부터 명부 생성</li>
+        <li>토큰의 위치 불일치 - 쿠키와 헤더</li>
       </ul>
     </section>
 
     <section class="slide">
       <h2>시연</h2>
       <ul>
-        <li><a href="https://moonshot-frontend.onrender.com">Moonshot</a></li>
+        <li>
+          <a
+            href="http://ec2-52-79-137-68.ap-northeast-2.compute.amazonaws.com/"
+            >welive</a
+          >
+        </li>
       </ul>
     </section>
 
